@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Erasmus Pilot · Staj yerini senin yerine arayan yazılım</title>
+<meta name="description" content="Erasmus Pilot, kendi Gmail hesaplarınla çalışan masaüstü yazılımıdır: Avrupa'daki işletmeleri bulur, senin adına kişisel başvuru maili gönderir, gelen cevapları okuyup fırsatları önüne koyar.">
+<meta property="og:title" content="Erasmus Pilot · Staj yerini sen aramazsın, Erasmus Pilot arar">
+<meta property="og:description" content="Avrupa'da konaklama + yemek + harçlık veren Erasmus+ staj yerlerini bulan ve senin adına başvuran yazılım.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c1222">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%230c1222'/><path d='M14 38l36-14-6 22-10-6-6 8-2-10z' fill='%23ffd23f'/><path d='M28 40l16-14' stroke='%230c1222' stroke-width='2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Erasmus Pilot">
+    <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M3 14l18-7-3 11-5-3-3 4-1-5z"/></svg></span>
+    Erasmus<b>Pilot</b>
+  </a>
+  <nav class="nav-links">
+    <a href="#nasil">Nasıl çalışır</a>
+    <a href="#demo">Canlı demo</a>
+    <a href="#ozellikler">Özellikler</a>
+    <a href="#paketler">Paketler</a>
+    <a href="#sss">SSS</a>
+  </nav>
+  <div class="nav-r">
+    <button class="snd" id="snd" aria-pressed="false" title="Ses efektleri"><span class="eq"><i></i><i></i><i></i></span><span class="snd-l">Ses</span></button>
+    <a class="btn btn-sm btn-sun" href="#iletisim" data-sfx="chime">Bilgi al</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="sky" aria-hidden="true"><i class="cl c1"></i><i class="cl c2"></i><i class="cl c3"></i><svg class="trail" viewBox="0 0 1200 400" preserveAspectRatio="none"><path d="M-20 360 C 300 300, 600 120, 1220 40" /></svg><span class="plane">✈</span></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span>ERASMUS+ 2027 STAJ SEZONU AÇIK</p>
+        <h1>Staj yerini sen aramazsın.<br><span class="hl">Erasmus Pilot</span> arar.</h1>
+        <p class="lead">Kendi Gmail hesaplarınla çalışan masaüstü yazılımı. Avrupa'daki işletmeleri bulur, senin adına kişisel başvuru maili gönderir, gelen cevapları okuyup fırsatları önüne koyar. Konaklama, yemek ve harçlık veren yerlere odaklanır.</p>
+        <div class="cta-row">
+          <a class="btn btn-sun btn-lg" href="#iletisim" data-sfx="chime">Ücretsiz ön görüşme <span class="arr">→</span></a>
+          <a class="btn btn-ghost btn-lg" href="#demo">Canlı demoyu izle</a>
+        </div>
+        <ul class="trust">
+          <li><b>50.000+</b> mail ile kendimiz test ettik</li>
+          <li><b>Nevşehir Hacı Bektaş Veli Üniversitesi</b> öğrencilerine duyurdu</li>
+          <li>Şifrelerin <b>bilgisayarından çıkmaz</b></li>
+        </ul>
+      </div>
+
+      <div class="board" aria-label="Kalkış panosu">
+        <div class="board-head">
+          <span class="board-title"><span class="blink"></span>KALKIŞLAR · DEPARTURES</span>
+          <span class="board-clock" id="clock">--:--</span>
+        </div>
+        <div class="board-cols"><span>SAAT</span><span>VARIŞ</span><span>İŞLETME</span><span>DURUM</span></div>
+        <div class="board-rows" id="board"></div>
+        <div class="board-foot">Temsilî akış · gerçek işletme adı içermez</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAKAMLAR -->
+  <section class="stats-band">
+    <div class="wrap stats">
+      <div class="stat"><b data-count="50000" data-suffix="+">0</b><span>mail gönderildi ve okundu</span></div>
+      <div class="stat"><b data-count="9">0</b><span>Gmail hesabı aynı anda</span></div>
+      <div class="stat"><b data-count="5" data-prefix="%">0</b><span>insan cevabı oranı</span></div>
+      <div class="stat"><b data-count="33">0</b><span>Erasmus+ program ülkesi</span></div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section" id="sorun">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot"></span>TANIDIK GELDİ Mİ?</p>
+      <h2 class="h2 center">Erasmus stajı bulmak neden bu kadar yorucu?</h2>
+      <div class="pain-grid">
+        <article class="pain"><span class="pain-ico">📭</span><h3>Yüzlerce mail, sıfır cevap</h3><p>Aynı maili kopyala yapıştır gönderirsin; çoğu spam'e düşer ya da hiç okunmaz.</p></article>
+        <article class="pain"><span class="pain-ico">🔎</span><h3>Doğru adresi bulmak</h3><p>Hangi otel stajyer alır, kime yazılır, mail adresi nerede? Günler bununla geçer.</p></article>
+        <article class="pain"><span class="pain-ico">🏠</span><h3>Konaklama ve harçlık</h3><p>Hibe birkaç ayı karşılar. Oda ve yemek vermeyen yer, staj değil masraftır.</p></article>
+        <article class="pain"><span class="pain-ico">🌍</span><h3>Takip ve dil</h3><p>Almanca, İtalyanca, Portekizce cevaplar gelir; hangisi fırsat, hangisi otomatik yanıt?</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NASIL -->
+  <section class="section alt" id="nasil">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot"></span>NASIL ÇALIŞIR</p>
+      <h2 class="h2 center">Dört adımda motor çalışır</h2>
+      <ol class="steps">
+        <li class="step" data-sfx="tick">
+          <span class="step-n">01</span>
+          <div class="step-ill" aria-hidden="true"><div class="ill-win"><i></i><i></i><i></i><span class="ill-bar"><em></em></span></div></div>
+          <h3>Kur</h3>
+          <p>Tek dosya, iki dakikada kurulum. Türkçe arayüz seni adım adım yönlendirir.</p>
+        </li>
+        <li class="step" data-sfx="tick">
+          <span class="step-n">02</span>
+          <div class="step-ill" aria-hidden="true"><div class="ill-key"><span>abcd efgh ijkl mnop</span><b>✓</b></div></div>
+          <h3>Gmail'ini bağla</h3>
+          <p>Google'dan bir "uygulama şifresi" alırsın; yazılım ekran ekran gösterir, bağlantıyı tek tıkla test eder.</p>
+        </li>
+        <li class="step" data-sfx="tick">
+          <span class="step-n">03</span>
+          <div class="step-ill" aria-hidden="true"><div class="ill-cv"><i></i><i></i><i></i><i></i><span>PDF</span></div></div>
+          <h3>Profilini ve CV'ni ekle</h3>
+          <p>Bölüm, tarih, süre, diller, CV. Başvuru maili profilinden otomatik yazılır, istersen düzenlersin.</p>
+        </li>
+        <li class="step" data-sfx="tick">
+          <span class="step-n">04</span>
+          <div class="step-ill" aria-hidden="true"><div class="ill-go"><span class="pulse"></span>MOTOR AKTİF</div></div>
+          <h3>Motoru başlat</h3>
+          <p>Ülke ve sektör seç, Başlat'a bas. Mailler Gmail limitlerine uygun tempoda gider, cevaplar panelde toplanır.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="section dark" id="demo">
+    <div class="wrap">
+      <p class="eyebrow center light"><span class="dot"></span>CANLI DEMO</p>
+      <h2 class="h2 center light">Yazılım çalışırken böyle görünür</h2>
+      <p class="lead center light narrow">Ekrana geldiğinde demo kendiliğinden başlar. Sesi açarsan gönderim ve gelen cevap seslerini de duyarsın.</p>
+      <div class="app" id="app">
+        <div class="app-bar"><i></i><i></i><i></i><span>Erasmus Pilot · Panel</span><span class="app-status" id="appStatus"><span class="pulse"></span>Motor hazır</span></div>
+        <div class="app-body">
+          <aside class="app-side">
+            <div class="side-item on">📊 Panel</div>
+            <div class="side-item">🎯 Hedefler</div>
+            <div class="side-item">✉️ Şablon</div>
+            <div class="side-item">📥 Cevaplar <span class="badge" id="badge">0</span></div>
+            <div class="side-item">⚙️ Hesaplar</div>
+            <div class="side-acc"><small>BAĞLI HESAPLAR</small><div><span class="ok"></span>ayse.erasmus@gmail.com</div><div><span class="ok"></span>ayse.staj27@gmail.com</div></div>
+          </aside>
+          <div class="app-main">
+            <div class="kpis">
+              <div class="kpi"><small>Gönderilen</small><b id="kSent">0</b></div>
+              <div class="kpi"><small>Cevap</small><b id="kReply">0</b></div>
+              <div class="kpi"><small>Olumlu</small><b id="kPos">0</b></div>
+              <div class="kpi"><small>Engellenen kötü adres</small><b id="kBlock">0</b></div>
+            </div>
+            <div class="panes">
+              <div class="pane">
+                <div class="pane-h">Giden kutusu <span class="mono" id="queueInfo">kuyruk: 1.240 hedef</span></div>
+                <div class="feed" id="outFeed"></div>
+              </div>
+              <div class="pane">
+                <div class="pane-h">Gelen cevaplar</div>
+                <div class="feed" id="inFeed"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Demo temsilidir; işletme adları uydurmadır. Tempo gösterim için hızlandırılmıştır.</p>
+    </div>
+  </section>
+
+  <!-- ÖZELLİKLER -->
+  <section class="section" id="ozellikler">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot"></span>ÖZELLİKLER</p>
+      <h2 class="h2 center">Kopyala yapıştır değil, akıllı başvuru</h2>
+      <div class="feat-grid">
+        <article class="feat big"><span class="feat-ico">✍️</span><h3>Her işletmeye özel mail</h3><p>Her mail işletmenin adıyla ve türüne göre kişisel bir giriş cümlesiyle başlar. Altı farklı konu ve metin dönüşümlü kullanılır, böylece toplu gönderim gibi görünmez.</p>
+          <div class="mail-mock"><div class="mm-h"><b>Konu:</b> Two Erasmus+ trainees who would love to join <em>Quinta do Vale</em> in 2027</div><p><em>Quinta do Vale</em> looks like exactly the kind of rural guesthouse we were hoping to find for our traineeship…</p></div>
+        </article>
+        <article class="feat"><span class="feat-ico">🗺️</span><h3>Hedef bulucu</h3><p>Ülke, şehir ve sektör seç; OpenStreetMap verisinden mail adresi olan oteller, pansiyonlar, hosteller, tur şirketleri listelenir.</p></article>
+        <article class="feat"><span class="feat-ico">🛡️</span><h3>Göndermeden önce kontrol</h3><p>Alan adı mail alamıyorsa ya da adres daha önce geri döndüyse mail gitmez. Gmail hesabın korunur.</p></article>
+        <article class="feat"><span class="feat-ico">📥</span><h3>Cevap okuyucu</h3><p>Gelen cevaplar olumlu, red, otomatik yanıt ve geri dönen mail diye ayrılır. Fırsatlar en üstte.</p></article>
+        <article class="feat"><span class="feat-ico">⏱️</span><h3>Akıllı tempo</h3><p>Birden fazla hesabı sırayla kullanır, günlük limitlere takılmadan doğal aralıklarla gönderir.</p></article>
+        <article class="feat"><span class="feat-ico">🔐</span><h3>Güvenlik</h3><p>Uygulama şifrelerin Windows şifrelemesiyle sadece senin bilgisayarında saklanır. Bize hiçbir şifre gelmez.</p></article>
+        <article class="feat"><span class="feat-ico">🇪🇺</span><h3>Erasmus+ açıklaması</h3><p>Her mailin sonunda, Erasmus+'ı bilmeyen işletmeye "size maliyeti yok, sadece kabul mektubu" diye kısa bir not.</p></article>
+        <article class="feat"><span class="feat-ico">📎</span><h3>Tek PDF eki</h3><p>CV ve motivasyon mektubun tek, hafif bir PDF olarak eklenir; işveren tek dosya açar.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KANIT -->
+  <section class="section alt" id="kanit">
+    <div class="wrap proof">
+      <div class="proof-copy">
+        <p class="eyebrow"><span class="dot"></span>ÖNCE KENDİMİZ İÇİN YAPTIK</p>
+        <h2 class="h2">Bu yazılımı kendi stajımızı bulmak için yazdık.</h2>
+        <p>Biz Ömer ve Müge, Aksaray Üniversitesi Turizm Rehberliği'nden iki yüksek lisans öğrencisiyiz. 2027 stajımız için Temmuz 2026'dan beri bu sistemi kendimiz kullanıyoruz: 50.000'den fazla mail, 9 Gmail hesabı, Avrupa'nın dört bir yanından cevaplar.</p>
+        <ul class="proof-list">
+          <li><b>Almanya:</b> bir tatil köyünün kurucusu, yakındaki lojmanı da belirterek görüşme istedi.</li>
+          <li><b>Portekiz:</b> bir kreatif ajans 6 aylık Erasmus+ stajına açık olduğunu yazdı.</li>
+          <li><b>İspanya:</b> bir otel oda, kahvaltı ve harçlıklı staj teklif etti.</li>
+          <li><b>İtalya:</b> bir tur şirketiyle ücretli uzaktan iş sözleşmesi imzaladık; Yunanistan'dan bir şirket de uzaktan çalışma teklif etti.</li>
+        </ul>
+        <a class="ref" href="https://uio.nevsehir.edu.tr/tr/58714" target="_blank" rel="noopener">
+          <span class="ref-ico">🏛️</span>
+          <span><b>Nevşehir Hacı Bektaş Veli Üniversitesi Uluslararası İlişkiler Ofisi</b><br>Erasmus Pilot'u staj yeri arayan öğrencilerine resmî olarak duyurdu (Ekim 2026) ↗</span>
+        </a>
+      </div>
+      <div class="founders">
+        <figure class="founder"><img src="assets/omer_card.webp" alt="Ömer Vural" loading="lazy"><figcaption><b>Ömer Vural</b><span>Yazılım, otomasyon</span></figcaption></figure>
+        <figure class="founder f2"><img src="assets/muge_card.webp" alt="Rabia Müge Emiroğlu" loading="lazy"><figcaption><b>Rabia Müge Emiroğlu</b><span>Tasarım, içerik</span></figcaption></figure>
+        <a class="pf-link" href="https://ihatedevelopers.github.io/portfolio" target="_blank" rel="noopener">Portfolyomuza bak ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KARŞILAŞTIRMA -->
+  <section class="section" id="karsilastir">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot"></span>KARŞILAŞTIRMA</p>
+      <h2 class="h2 center">Kendi başına mı, Erasmus Pilot ile mi?</h2>
+      <div class="compare">
+        <div class="cmp-row head"><span></span><span>Kendi başına</span><span class="us">Erasmus Pilot</span></div>
+        <div class="cmp-row"><span>Günde gönderilen başvuru</span><span>5–10</span><span class="us">Hesap başı 60–150</span></div>
+        <div class="cmp-row"><span>Mail adresi bulma</span><span>Elle, saatlerce</span><span class="us">Otomatik hedef bulucu</span></div>
+        <div class="cmp-row"><span>Kişisel mail</span><span>Kopyala yapıştır</span><span class="us">Her işletmeye özel giriş</span></div>
+        <div class="cmp-row"><span>Geri dönen adresler</span><span>Gelen kutunu doldurur</span><span class="us">Otomatik ayıklanır</span></div>
+        <div class="cmp-row"><span>Cevap takibi</span><span>Kaybolur</span><span class="us">Tek panelde, sınıflandırılmış</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAKETLER -->
+  <section class="section alt" id="paketler">
+    <div class="wrap">
+      <p class="eyebrow center"><span class="dot"></span>PAKETLER</p>
+      <h2 class="h2 center">Sana uyan yolu seç</h2>
+      <p class="lead center narrow">Fiyatlar; süreye, hesap sayısına ve hedef ülke sayısına göre değişir. WhatsApp'tan yaz, birkaç dakikada net fiyat verelim. Ön görüşme her zaman ücretsiz.</p>
+      <div class="plans">
+        <article class="plan">
+          <span class="plan-tag">KENDİN KULLAN</span>
+          <h3>Yazılım</h3>
+          <p class="plan-sub">Erasmus Pilot masaüstü uygulaması, senin bilgisayarında.</p>
+          <ul><li>Windows uygulaması + kurulum rehberi</li><li>Gmail bağlama desteği</li><li>Hedef bulucu ve cevap paneli</li><li>Tek ve çift başvuru için kişisel mail şablonları</li></ul>
+          <a class="btn btn-ghost-d" href="#iletisim" data-sfx="chime">Fiyat al</a>
+        </article>
+        <article class="plan pop">
+          <span class="plan-tag">EN ÇOK TERCİH EDİLEN</span>
+          <h3>Yazılım + Kurulum</h3>
+          <p class="plan-sub">Yazılımı birlikte kurarız, ilk kampanyanı beraber başlatırız.</p>
+          <ul><li>Yazılım paketindeki her şey</li><li>CV + motivasyon mektubu düzenleme</li><li>Hedef ülke ve sektör stratejisi</li><li>İlk gelen cevaplarda yazışma desteği</li></ul>
+          <a class="btn btn-sun" href="#iletisim" data-sfx="chime">Fiyat al</a>
+        </article>
+        <article class="plan">
+          <span class="plan-tag">TAM HİZMET</span>
+          <h3>Biz Yürütelim</h3>
+          <p class="plan-sub">Tüm süreci ekibimiz senin adına yönetir.</p>
+          <ul><li>Kampanyayı biz çalıştırırız</li><li>Cevapları biz okur, sana özetleriz</li><li>Teklif yazışmalarında destek</li><li>Kabul mektubu sürecinde rehberlik</li></ul>
+          <a class="btn btn-ghost-d" href="#iletisim" data-sfx="chime">Fiyat al</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="section" id="sss">
+    <div class="wrap narrow-wrap">
+      <p class="eyebrow center"><span class="dot"></span>SSS</p>
+      <h2 class="h2 center">Sık sorulan sorular</h2>
+      <div class="faq">
+        <details><summary>Staj garantisi var mı?</summary><p>Hayır, kimse dürüstçe garanti veremez. Yazılım, elle yapabileceğinden çok daha fazla doğru işletmeye, çok daha kişisel bir mailin ulaşmasını sağlar. Kendi kullanımımızda her 100 maile yaklaşık 5 insan cevabı geldi; bunların bir kısmı görüşme ve teklif oldu.</p></details>
+        <details><summary>"Uygulama şifresi" nedir, güvenli mi?</summary><p>Google'ın, normal şifreni vermeden bir programın Gmail'den mail göndermesine izin veren 16 haneli özel şifresidir. Google hesabında iki adımlı doğrulama açıkken alınır, istediğin an silebilirsin. Yazılım bu şifreyi Windows şifrelemesiyle sadece senin bilgisayarında saklar; bize gelmez.</p></details>
+        <details><summary>Kaç Gmail hesabı gerekir?</summary><p>Bir hesap yeterlidir. İki ya da üç hesap bağlarsan gönderim hızı artar, yük hesaplar arasında paylaşılır.</p></details>
+        <details><summary>Gmail hesabım kapanır mı?</summary><p>Yazılım, Gmail limitlerinin altında ve doğal aralıklarla gönderir, mail alamayan adresleri önceden eler. Yine de çok yüksek hacimli gönderimde risk sıfır değildir; bu yüzden ayrı bir başvuru hesabı açmanı öneririz.</p></details>
+        <details><summary>Hangi ülkelere başvurabilirim?</summary><p>Erasmus+ program ülkelerinin tamamına. Ülkeleri ve sektörleri sen seçersin; üniversitenin kapsamadığı ülkeleri kapatabilirsin.</p></details>
+        <details><summary>Mac'te çalışıyor mu?</summary><p>Şu an Windows 10 ve 11 için. Mac kullanıyorsan "Biz Yürütelim" paketiyle süreci senin adına çalıştırabiliriz.</p></details>
+        <details><summary>Verilerim nerede tutuluyor?</summary><p>Profilin, CV'n, hedef listen ve gönderim kayıtların senin bilgisayarında, yerel bir veritabanında durur. KVKK ve GDPR'a uygun şekilde, hiçbir veri üçüncü kişilerle paylaşılmaz.</p></details>
+        <details><summary>Kimler kullanabilir?</summary><p>Erasmus+ staj hareketliliğine başvuran ya da başvurmayı düşünen her bölümden öğrenci ve yeni mezun. Turizm, otelcilik, gastronomi ve dijital alanlarda hedef bulucu en güçlü sonuçları verir.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="final" id="iletisim">
+    <div class="wrap final-grid">
+      <div class="ticket">
+        <div class="t-main">
+          <div class="t-top"><span>ERASMUS PILOT AIR</span><span>BİNİŞ KARTI</span></div>
+          <div class="t-route"><div><b>TR</b><small>Türkiye</small></div><div class="t-line"><span>✈</span></div><div class="r"><b>EU</b><small>Staj yerin</small></div></div>
+          <div class="t-grid"><div><small>YOLCU</small><b>Sen</b></div><div><small>KALKIŞ</small><b>2027</b></div><div><small>BAGAJ</small><b>CV + Motivasyon</b></div></div>
+        </div>
+        <div class="t-stub"><small>KAPI</small><b>EP</b><span class="barcode"></span></div>
+      </div>
+      <div class="final-copy">
+        <h2 class="h2 light">Kalkışa hazır mısın?</h2>
+        <p class="lead light">Bir mesaj at, durumunu konuşalım. Ön değerlendirme ücretsiz, cevap aynı gün.</p>
+        <div class="cta-row">
+          <a class="btn btn-sun btn-lg" id="waBtn" href="https://wa.me/905317114577?text=Merhaba%2C%20Erasmus%20Pilot%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" data-sfx="chime">WhatsApp'tan yaz</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:itsomervural@gmail.com?subject=Erasmus%20Pilot" data-sfx="chime">Mail gönder</a>
+        </div>
+        <p class="small light">+90 531 711 45 77 · itsomervural@gmail.com</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="brand small"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M3 14l18-7-3 11-5-3-3 4-1-5z"/></svg></span>Erasmus<b>Pilot</b></span>
+    <span>© 2026 Ömer Vural &amp; Rabia Müge Emiroğlu · Kapadokya'da yapıldı</span>
+    <span>Erasmus+ Avrupa Birliği'nin bir programıdır; Erasmus Pilot bağımsız bir hizmettir.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="js/sfx.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
