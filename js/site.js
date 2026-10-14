@@ -183,6 +183,26 @@
   new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? startDemo() : stopDemo())), { threshold: 0.35 }).observe($("#app"));
   setK();
 
+  // ---------- Uygulama ekranları ----------
+  const CAPS = {
+    "app-panel": "Motoru tek tuşla başlat; bugün kaç mail gittiğini, gelen fırsatları ve hesaplarının durumunu tek ekranda gör.",
+    "app-gmail": "Gmail'i bağlamak için ekran ekran rehber: iki adımlı doğrulama, uygulama şifresi, tek tıkla bağlantı testi.",
+    "app-preview": "İşletmeye gidecek maili önceden gör. Altı farklı metin döner; her biri işletmenin adıyla başlar.",
+    "app-replies": "Cevaplar kendiliğinden ayrılır: teklif, olumlu, red, otomatik. Tek tıkla Gmail'de aç ve cevapla.",
+  };
+  $$(".shot-tabs button").forEach((b) => b.addEventListener("click", () => {
+    $$(".shot-tabs button").forEach((x) => x.classList.toggle("on", x === b));
+    const img = $("#shotImg");
+    img.classList.add("fade");
+    setTimeout(() => {
+      img.onload = () => img.classList.remove("fade");
+      img.src = `assets/app/${b.dataset.shot}.webp`;
+      setTimeout(() => img.classList.remove("fade"), 900); // önbellekten gelirse onload kaçabilir
+    }, 180);
+    $("#shotCap").textContent = CAPS[b.dataset.shot];
+    S.tick();
+  }));
+
   // ---------- Nav: kaydırınca koyulaş ----------
   const nav = $("#nav");
   addEventListener("scroll", () => { nav.style.background = scrollY > 40 ? "rgba(12,18,34,.9)" : ""; }, { passive: true });

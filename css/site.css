@@ -208,6 +208,21 @@ img { display: block; max-width: 100%; }
 .fi .ico { font-size: 16px; }
 .demo-note { text-align: center; font-size: 12.5px; color: rgba(255, 255, 255, .45); margin: 16px 0 0; }
 
+/* Ekranlar */
+.shots { margin-top: 36px; }
+.shot-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.shot-tabs button { border: 1.5px solid var(--line); background: var(--card); border-radius: 12px; padding: 10px 16px; font-weight: 700; font-size: 14px; transition: all .2s var(--ease); }
+.shot-tabs button:hover { transform: translateY(-2px); }
+.shot-tabs button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.shot-frame { max-width: 1080px; margin: 0 auto; border-radius: 16px; overflow: hidden; background: #e9ecf3; box-shadow: 0 50px 100px -40px rgba(12, 18, 34, .55), 0 0 0 1px rgba(12, 18, 34, .08); }
+.shot-bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; font-size: 13px; font-weight: 600; color: #4a5068; }
+.shot-bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.shot-bar i:nth-child(2) { background: #febc2e; } .shot-bar i:nth-child(3) { background: #28c840; }
+.shot-bar span { margin-left: 8px; }
+.shot-frame img { width: 100%; display: block; transition: opacity .25s; }
+.shot-frame img.fade { opacity: 0; }
+.shot-cap { text-align: center; color: var(--muted); max-width: 640px; margin: 18px auto 0; }
+
 /* Özellikler */
 .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
 .feat { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s; }
