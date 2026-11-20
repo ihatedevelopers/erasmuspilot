@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "since": "2026-07-23",
  "emails": 73112,
  "businesses": 63667,
- "replies": 3362,
- "positive": 598,
- "reply_rate": 0.046,
+ "replies": 3369,
+ "positive": 600,
+ "reply_rate": 0.0461,
  "positive_rate": 0.0082,
  "countries": 27
 }
